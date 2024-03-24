@@ -2,8 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\HomepageController;
-use App\Http\Controllers\RunBackgroundScript;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\CreateCustomerDataController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,7 +23,7 @@ Route::post('login', [LoginController::class, 'handleLogin'])->name('handle_logi
 
 Route::group(['middleware' => 'auth'], function(){
 
-    Route::get('home', [HomepageController::class, 'showHome'])->name('homepage');
-    Route::get('test', [RunBackgroundScript::class, 'runShellScript'])->name('test');
+   Route::get('home', [HomeController::class, 'showHome'])->name('homepage');
+   Route::post('create_customer_data', [CreateCustomerDataController::class, 'create_customer_data'])->name('customer_data');
 
 });

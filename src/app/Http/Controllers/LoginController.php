@@ -1,11 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
 use Auth;
 use Illuminate\Support\Facades\Redirect;
-use Illuminate\Http\Request;
-
-
 class LoginController extends Controller
 {
     public function handleLogin(Request $request)
@@ -17,6 +16,5 @@ class LoginController extends Controller
         }else{
             return redirect()->back()->with('message', 'Login Faild! email or password not valid');
         }
-
     }
 }

@@ -44,26 +44,32 @@ https://www.tooplate.com/view/2095-level
                     <div class="container ie-h-align-center-fix">
                         <div class="row">
                             <div class="col-xs-12 ml-auto mr-auto ie-container-width-fix">
-                                <form action="index.html" method="get" class="tm-search-form tm-section-pad-2">
+                                {!! Form::open(['method' => 'POST', 'route' => ['customer_data'],'files' => true,'class'=>'row']) !!}   
+                                {{ csrf_field() }}
                                     <div class="form-row tm-search-form-row">
                                         <div class="form-group tm-form-element tm-form-element-100">
                                             <i class="fa-2x tm-form-element-icon"></i>
-                                            <input name="customername" type="text" class="form-control" id="inputCity" placeholder="Type Customer Name...">
+                                            <input name="customer_name" type="text" class="form-control" id="inputCity" placeholder="Type Customer Name...">
                                         </div>
                                         <div class="form-group tm-form-element tm-form-element-50">
                                             <i class="fa-2x tm-form-element-icon"></i>
-                                            <input name="city" type="text" class="form-control" id="inputCity" placeholder="Type Demo Version...">
+                                            <input name="version" type="text" class="form-control" id="inputCity" placeholder="Type Demo Version...">
                                         </div>
                                         <div class="form-group tm-form-element tm-form-element-50">
                                             <i class="fa-2x tm-form-element-icon"></i>
-                                            <input name="city" type="text" class="form-control" id="inputCity" placeholder="How Many Users...">
+                                            <input name="port" type="text" class="form-control" id="inputCity" placeholder="port">
+                                        </div>
+                                        <div class="form-group tm-form-element tm-form-element-50">
+                                            <i class="fa-2x tm-form-element-icon"></i>
+                                            <label>Upload Customer Logo<span style="color:#f00;">*</span></label>
+                                            <input type="file" class="form-control-file" >
                                         </div>
                                     </div>
                                         <div class="form-group tm-form-element tm-form-element-2">
-                                        <a class="nav-link" href="{{route('test')}}">test</a>
+                                        <button type="submit" class="btn btn-danger ">Test</button>
                                         </div>
                                       </div>
-                                </form>
+                                      {!! Form::close() !!}  
                             </div>                        
                         </div>      
                     </div>
