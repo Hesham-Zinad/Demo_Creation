@@ -8,7 +8,7 @@ RUN cd /tmp \
 
 RUN docker-php-ext-install pdo pdo_mysql
 
-RUN apt-get update
+RUN apt-get update && apt-get install -y sshpass
 
 # Install useful tools
 RUN apt-get -y install apt-utils nano wget dialog vim
