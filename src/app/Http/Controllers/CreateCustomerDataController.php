@@ -20,7 +20,7 @@ class CreateCustomerDataController extends Controller
             'logo' => 'logo',
         ]);
 
-        Storage::disk('local')->put("input".".txt", $customer->customer_name."\n".$customer->port."\n".$customer->version);
+        Storage::disk('local')->put("input".".txt", $customer->customer_name."\n".$customer->port."\n".$customer->version."\n");
         // Path to the shell script
         $scriptPath = storage_path('app\test.sh');
         // Execute the script
